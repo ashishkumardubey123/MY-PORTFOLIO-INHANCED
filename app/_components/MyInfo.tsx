@@ -34,7 +34,7 @@ const MyInfo: React.FC<MyInfoProps> = ( { button } ) => {
     <button
       onClick={ () => setActiveTab( id ) }
       className={ `flex items-center p-1 sm:p-2 rounded-md transition-all text-xs sm:text-sm ${ activeTab === id
-        ? "bg-white text-black"
+        ? "bg-white text-black font-medium"
         : "text-white hover:bg-white/20"
         }` }
     >
@@ -48,41 +48,74 @@ const MyInfo: React.FC<MyInfoProps> = ( { button } ) => {
       { id === "experience" ? (
         <div className="space-y-4">
           <div>
-            <h4 className="font-semibold mb-2">Leadership Experience:</h4>
-            <ul className="list-disc pl-4 space-y-2 text-sm">
-              <li>Led development team as Tech Lead at MnA Studio (Mar 2024 - May 2024)</li>
-              <li>Improved site performance and SEO rankings by 40%, achieving 90+ Lighthouse scores</li>
-              <li>Managed project timelines and 3-member team collaboration in Agile environment</li>
+            <div className="flex justify-between items-baseline mb-0.5">
+              <h4 className="font-semibold text-xs sm:text-sm text-white">Full Stack Web Developer — DOAGuru InfoSystems</h4>
+              <span className="text-[10px] sm:text-xs text-cyan-400 font-mono">Jan 2026 – Present</span>
+            </div>
+            <p className="text-[11px] text-gray-400 mb-2">Jabalpur, MP</p>
+            <ul className="list-disc pl-4 space-y-1.5 text-xs text-gray-300">
+              <li>Delivered 4 production web platforms end-to-end across real estate, healthcare, and business automation; recognized with a company Appreciation Certificate for outstanding contribution.</li>
+              <li>Built <strong>Revenue Engine</strong>, a full client-to-cash automation system covering proposal generation, WhatsApp/Gmail approvals, GST & TDS-calculated invoicing, and revenue reporting.</li>
+              <li>Developed <strong>Nidhivan Developers</strong> (3-property real estate portfolio) and <strong>MedBrainix</strong> (AI-powered clinic management platform with smart revenue dashboard & AI voice scheduling).</li>
+              <li>Integrated Generative AI into live production applications, improved performance by 40% through optimization, and implemented SEO best practices.</li>
+              <li>Extended and reused shared backend infrastructure across related projects, including Ayushi Construction and Siara Property.</li>
             </ul>
           </div>
-          <div>
-            <h4 className="font-semibold mb-2">Current Role Highlights (Satya The Hive):</h4>
-            <ul className="list-disc pl-4 space-y-2 text-sm">
-              <li>Developed and delivered 35+ client websites across 10+ industries</li>
-              <li>Built scalable full-stack applications serving 5,000+ monthly active users</li>
-              <li>Architected CI/CD pipelines with GitHub Actions (83% faster deployments)</li>
-              <li>Integrated Razorpay payment gateway and Auth.js for secure transactions</li>
-              <li>Deployed applications on AWS (EC2, S3) and VPS with 99.9% uptime</li>
-              <li>Optimized 15+ database queries with Redis caching (30% faster APIs)</li>
+
+          <div className="border-t border-gray-700/60 pt-3">
+            <div className="flex justify-between items-baseline mb-0.5">
+              <h4 className="font-semibold text-xs sm:text-sm text-white">Web Developer — MBG Card</h4>
+              <span className="text-[10px] sm:text-xs text-gray-400 font-mono">Oct 2025 – Dec 2025</span>
+            </div>
+            <ul className="list-disc pl-4 space-y-1 text-xs text-gray-300">
+              <li>Developed responsive WordPress websites using custom themes and modern UI/UX practices.</li>
+              <li>Reduced page load time by approximately 40% through performance optimization and implemented SEO best practices.</li>
+            </ul>
+          </div>
+
+          <div className="border-t border-gray-700/60 pt-3">
+            <div className="flex justify-between items-baseline mb-0.5">
+              <h4 className="font-semibold text-xs sm:text-sm text-white">Web Developer Intern — MNA Studios</h4>
+              <span className="text-[10px] sm:text-xs text-gray-400 font-mono">Mar 2024 – May 2024</span>
+            </div>
+            <ul className="list-disc pl-4 space-y-1 text-xs text-gray-300">
+              <li>Designed and developed user-friendly, visually appealing websites for clients.</li>
+              <li>Performed website maintenance, bug fixes, and content updates to improve engagement.</li>
+            </ul>
+          </div>
+
+          <div className="border-t border-gray-700/60 pt-3">
+            <div className="flex justify-between items-baseline mb-0.5">
+              <h4 className="font-semibold text-xs sm:text-sm text-white">SEO Expert & Canva Designer — SalvusApp Solution</h4>
+              <span className="text-[10px] sm:text-xs text-gray-400 font-mono">Feb 2023 – Nov 2023</span>
+            </div>
+            <ul className="list-disc pl-4 space-y-1 text-xs text-gray-300">
+              <li>Conducted technical SEO audits and link-building campaigns that improved website indexing and ranking.</li>
+              <li>Created marketing creatives in Canva and monitored analytics to report campaign performance.</li>
             </ul>
           </div>
         </div>
       ) : id === "skills" ? (
-        <p className="text-xs sm:text-sm tracking-wide">
-          <span className="font-semibold">Languages:</span> JavaScript, TypeScript, SQL, HTML5, CSS3<br />
-          <span className="font-semibold">Frontend:</span> React.js, Next.js (App Router + Pages Router), Redux Toolkit, Tailwind CSS, Framer Motion, Shadcn UI<br />
-          <span className="font-semibold">Backend:</span> Node.js, Express.js, Prisma ORM, GraphQL, Apollo Client & Server, REST APIs<br />
-          <span className="font-semibold">Databases:</span> PostgreSQL, MongoDB, Redis, Firebase<br />
-          <span className="font-semibold">DevOps & Cloud:</span> Docker, GitHub Actions (CI/CD), Nginx, Linux (Ubuntu), AWS (EC2, S3), VPS Management<br />
-          <span className="font-semibold">Tools:</span> Git, GitHub, VS Code, Postman, WordPress, Shopify<br />
-          <span className="font-semibold">Auth & Payments:</span> Auth.js (NextAuth), Razorpay, bcryptjs
-        </p>
+        <div className="space-y-2 text-xs sm:text-sm tracking-wide text-gray-300">
+          <p><span className="font-semibold text-white">Languages:</span> JavaScript (ES6+), TypeScript, C, C++</p>
+          <p><span className="font-semibold text-white">Frontend:</span> React.js, Next.js, Redux, React Router, React Hook Form, HTML5, CSS3</p>
+          <p><span className="font-semibold text-white">Styling & UI:</span> Tailwind CSS, shadcn/ui, Bootstrap, GSAP (ScrollTrigger), Swiper.js</p>
+          <p><span className="font-semibold text-white">Backend:</span> Node.js, Express.js, RESTful APIs, JWT Authentication, Nodemailer, Puppeteer</p>
+          <p><span className="font-semibold text-white">Databases:</span> MySQL, MongoDB</p>
+          <p><span className="font-semibold text-white">Integrations & AI:</span> Generative AI Integration, WhatsApp Business API, Google Ads Enhanced Conversions, Meta Pixel/CAPI</p>
+          <p><span className="font-semibold text-white">Tools & Practices:</span> Git, GitHub, Postman, SEO Optimization, Agile/Iterative Development</p>
+        </div>
       ) : id === "education" ? (
-        <p className="text-xs sm:text-sm tracking-wide">
-          <span className="font-semibold">B.Com (2021 - 2024)</span> — Delhi University (School of Open Learning)<br />
-          <span className="font-semibold">MERN Stack Development</span> — MnA Studio (Comprehensive Full Stack Training)<br />
-          <span className="font-semibold">Web Designing Diploma</span> — LBS Training Institute
-        </p>
+        <div className="space-y-3 text-xs sm:text-sm tracking-wide text-gray-300">
+          <div>
+            <h4 className="font-semibold text-white">M.Sc. Computer Science</h4>
+            <p className="text-gray-400 text-xs sm:text-sm">Makhanlal Chaturvedi National University | 2022 – 2024</p>
+          </div>
+          <div className="border-t border-gray-700/60 pt-2.5">
+            <h4 className="font-semibold text-white">B.Sc.</h4>
+            <p className="text-gray-400 text-xs sm:text-sm">Rani Durgavati Vishwavidyalaya (RDVV), Jabalpur, MP | 2019 – 2022</p>
+          </div>
+        </div>
       ) : (
         <p className="text-xs sm:text-sm tracking-wide">{ content }</p>
       ) }
@@ -92,7 +125,7 @@ const MyInfo: React.FC<MyInfoProps> = ( { button } ) => {
   return (
     <Popover>
       <PopoverTrigger>{ button }</PopoverTrigger>
-      <PopoverContent className="w-[95vw] bg-[#19181cef] sm:w-[550px]  p-0 border shadow-xl">
+      <PopoverContent className="w-[95vw] bg-[#19181cef] sm:w-[550px] p-0 border border-gray-800 shadow-2xl backdrop-blur-md">
         <div className="max-h-[80vh] overflow-y-auto custom-scrollbar">
           <div className="p-4 sm:p-6 text-white">
             <div className="flex items-center mb-4 sm:mb-6">
@@ -100,47 +133,47 @@ const MyInfo: React.FC<MyInfoProps> = ( { button } ) => {
                 src="/avatar.png"
                 width={ 60 }
                 height={ 60 }
-                alt="avatar"
-                className="rounded-full border-2 border-white mr-3 sm:mr-6"
+                alt="Ashish Dubey avatar"
+                className="rounded-full border-2 border-cyan-400/80 mr-3 sm:mr-6 object-cover"
               />
               <div>
-                <h2 className="text-lg sm:text-2xl font-bold">Ashish Kumar</h2>
-                <p className="text-sm sm:text-lg text-gray-300">
-                  Full Stack Developer
+                <h2 className="text-lg sm:text-2xl font-bold">Ashish Dubey</h2>
+                <p className="text-sm sm:text-base text-cyan-400">
+                  Full Stack Web Developer
                 </p>
               </div>
             </div>
 
-            <div className="space-y-1 sm:space-y-2 mb-4 sm:mb-6">
+            <div className="space-y-1 sm:space-y-2 mb-4 sm:mb-6 text-gray-300">
               <p className="flex items-center text-xs sm:text-sm">
-                <Mail size={ 12 } className="mr-1 sm:mr-2" />
+                <Mail size={ 14 } className="mr-2 text-cyan-400" />
                 ashish9039062705@gmail.com
               </p>
               <p className="flex items-center text-xs sm:text-sm">
-                <Phone size={ 12 } className="mr-1 sm:mr-2" />
-                +919302300834
+                <Phone size={ 14 } className="mr-2 text-cyan-400" />
+                +91 9302300834
               </p>
               <p className="flex items-center text-xs sm:text-sm">
-                <MapPin size={ 12 } className="mr-1 sm:mr-2" />
-                JABALPUR,MADHYA-PRADESH,482004
+                <MapPin size={ 14 } className="mr-2 text-cyan-400" />
+                Jabalpur, Madhya Pradesh, India
               </p>
             </div>
 
             <div className="mb-4 sm:mb-6">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">
+              <h3 className="text-base sm:text-lg font-semibold mb-2 text-white">
                 About
               </h3>
               <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">
-                Results-driven Full Stack Developer with 1.5+ years of professional experience specializing in Next.js, Node.js, and MERN. Successfully delivered MU5+ client projects across diverse industries including FinTech, Healthcare, EdTech, E-Commerce, Real Estate, Legal, Travel, and Entertainment. Built and deployed production applications handling real payments, user authentication, and serving 5,000+ monthly users. Proficient in DevOps with hands-on experience in CI/CD pipelines, Docker, AWS, and VPS server management.
+                Full Stack Web Developer with 1.5+ years of experience designing and shipping production web applications with React.js, Node.js, Express.js, MySQL, and MongoDB. Delivered end-to-end platforms across real estate, healthcare, and business-automation domains, including a client-to-cash automation system, an AI-powered clinic management tool, and a multi-property real estate portal. Skilled in RESTful API design, database architecture, third-party integrations, and performance optimization. Recognized with a company Appreciation Certificate for outstanding contribution across four major product launches.
               </p>
             </div>
 
             <div className="mb-4 sm:mb-6">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">
+              <h3 className="text-base sm:text-lg font-semibold mb-2 text-white">
                 Current Position
               </h3>
-              <p className="text-xs sm:text-sm">
-                Full Stack Developer at Satya The Hive, Dwarka Expressway, Sector 102, Gurugram, Haryana 122505 | September 2024 - Present
+              <p className="text-xs sm:text-sm text-gray-300">
+                Full Stack Web Developer at <span className="text-white font-medium">DOAGuru InfoSystems</span>, Jabalpur, MP | Jan 2026 – Present
               </p>
             </div>
 
@@ -155,16 +188,16 @@ const MyInfo: React.FC<MyInfoProps> = ( { button } ) => {
             </div>
 
             {/* Tab content */ }
-            <div className="bg-black/20 rounded-lg p-4">
+            <div className="bg-black/30 border border-white/5 rounded-xl p-4">
               <TabContent id="experience" content="" />
               <TabContent id="skills" content="" />
               <TabContent id="education" content="" />
             </div>
           </div>
         </div>
-        <div className="p-2 sm:p-4 bg-black/50 flex justify-between items-center">
-          <span className="text-white text-xs sm:text-sm">
-            View Full Profile
+        <div className="p-2 sm:p-4 bg-black/60 border-t border-gray-800 flex justify-between items-center">
+          <span className="text-gray-400 text-xs">
+            DOAGuru InfoSystems // Ashish Dubey Portfolio
           </span>
           <ChevronUp className="text-white" />
         </div>
