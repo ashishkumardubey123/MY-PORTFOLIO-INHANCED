@@ -25,8 +25,8 @@ const Contact: React.FC<ContactProps> = ( { button } ) => {
             alt="avatar"
             className="rounded-full border-2 border-gray-700 mb-4"
           />
-          <h3 className="text-lg font-semibold">Ashish Kumar</h3>
-          <p className="text-sm text-gray-400 mb-4">Full Stack Developer</p>
+          <h3 className="text-lg font-semibold">Ashish Dubey</h3>
+          <p className="text-sm text-gray-400 mb-4">Full Stack Web Developer</p>
 
           <div className="flex justify-center space-x-4 mb-6">
             <Tooltip text="Call">
@@ -61,20 +61,20 @@ const Contact: React.FC<ContactProps> = ( { button } ) => {
 
           <ContactInfo
             label="Phone"
-            value="+91 8882304322"
+            value="+91 9302300834"
             onClick={ handleCall }
           />
           <hr className="w-full border-gray-600 my-1" />
           <ContactInfo
             label="Email"
-            value="codeshorts007@gmail.com"
+            value="ashish9039062705@gmail.com"
             onClick={ handleEmail }
           />
           <hr className="w-full border-gray-600 my-1" />
           <ContactInfo
             label="Website"
-            value="https://my-portfolio-rk.vercel.app"
-            onClick={ handleShare }
+            value="https://ashish-portfolio-inhanced.vercel.app"
+            onClick={ handleWebsite }
           />
         </div>
       </DialogContent>

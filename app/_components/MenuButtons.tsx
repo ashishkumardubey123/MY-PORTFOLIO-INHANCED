@@ -16,15 +16,15 @@ const PLATFORMS = {
   IPHONE: "iPhone",
 };
 
-const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
-  const [isFullScreen, setIsFullScreen] = useState(false);
+const MenuButtons: FC<menuButtonProps> = ( { platform, togglePlatform } ) => {
+  const [ isFullScreen, setIsFullScreen ] = useState( false );
 
-  const handleFullScreenClick = () => enterFullScreen(setIsFullScreen);
+  const handleFullScreenClick = () => enterFullScreen( setIsFullScreen );
 
-  const getButtonConfig = (key: string): ButtonConfig => {
+  const getButtonConfig = ( key: string ): ButtonConfig => {
     const configs = {
       pdf: {
-        src: `/${platform.toLowerCase()}/pdf.png`,
+        src: `/${ platform.toLowerCase() }/pdf.png`,
         width:
           platform === PLATFORMS.WINDOWS || platform === PLATFORMS.MAC
             ? 60
@@ -32,31 +32,31 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
         height: 70,
         alt: "PDF Logo",
         label: "Resume",
-        href: "/Ritesh.pdf",
+        href: "/Ashish_Dubey_Resume.pdf",
         className: "rounded-xl",
       },
       github: {
         src:
           platform === PLATFORMS.ANDROID
             ? "/windows/github.png"
-            : `/${platform.toLowerCase()}/github.png`,
+            : `/${ platform.toLowerCase() }/github.png`,
         width: 70,
         height: 70,
         alt: "GitHub Logo",
         label: "GitHub",
-        href: "https://github.com/riteshk-007",
+        href: "https://github.com/ashishkumardubey123",
         className: "rounded-xl",
       },
       linkedin: {
         src:
           platform === PLATFORMS.ANDROID
             ? "/windows/linkedin.png"
-            : `/${platform.toLowerCase()}/linkedin.png`,
+            : `/${ platform.toLowerCase() }/linkedin.png`,
         width: 70,
         height: 70,
         alt: "LinkedIn Logo",
         label: "LinkedIn",
-        href: "https://www.linkedin.com/in/ritesh-kumar-827b9a360",
+        href: "https://www.linkedin.com/in/ashish-dubey-26aaaa1b4",
         className: "rounded-xl",
       },
       x: {
@@ -74,34 +74,34 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
         height: 60,
         alt: "Coffee Logo",
         label: "coffee",
-        href: "https://buymeacoffee.com/riteshk_007",
+        href: "https://buymeacoffee.com/ashish9039m",
         className:
           "bg-gradient-to-t from-yellow-100 to-gray-200 p-2 rounded-xl shadow-xl w-14 h-14 flex items-center justify-center",
       },
     };
-    return configs[key as keyof typeof configs];
+    return configs[ key as keyof typeof configs ];
   };
 
-  const renderButton = (config: ButtonConfig) => (
+  const renderButton = ( config: ButtonConfig ) => (
     <a
-      href={config.href}
+      href={ config.href }
       target="_blank"
       className="flex flex-col items-center justify-center text-white text-sm"
     >
       <Image
-        src={config.src}
-        width={config.width}
-        height={config.height}
-        alt={config.alt}
-        className={config.className}
+        src={ config.src }
+        width={ config.width }
+        height={ config.height }
+        alt={ config.alt }
+        className={ config.className }
       />
-      <p className="tracking-wide mb-2">{config.label}</p>
+      <p className="tracking-wide mb-2">{ config.label }</p>
     </a>
   );
 
   const renderPlatformToggleButton = () => {
     const getNextPlatform = () => {
-      switch (platform) {
+      switch ( platform ) {
         case PLATFORMS.WINDOWS:
           return "Mac Mode";
         case PLATFORMS.MAC:
@@ -116,24 +116,24 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
     };
 
     const getIcon = () => {
-      switch (platform) {
+      switch ( platform ) {
         case PLATFORMS.WINDOWS:
           return (
-            <Image src="/mac/apple.png" width={30} height={30} alt="Mac Logo" />
+            <Image src="/mac/apple.png" width={ 30 } height={ 30 } alt="Mac Logo" />
           );
         case PLATFORMS.MAC:
-          return <SiWindows size={30} />;
+          return <SiWindows size={ 30 } />;
         case PLATFORMS.ANDROID:
           return (
             <Image
               src="/mac/apple.png"
-              width={30}
-              height={30}
+              width={ 30 }
+              height={ 30 }
               alt="iPhone Logo"
             />
           );
         case PLATFORMS.IPHONE:
-          return <FaAndroid size={30} />;
+          return <FaAndroid size={ 30 } />;
         default:
           return null;
       }
@@ -141,14 +141,14 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
 
     return (
       <button
-        onClick={togglePlatform}
+        onClick={ togglePlatform }
         className="flex flex-col items-center justify-center text-white text-sm gap-2"
       >
         <span className="bg-gradient-to-t from-blue-400 to-blue-500 p-3 rounded-xl shadow-xl">
-          {getIcon()}
+          { getIcon() }
         </span>
         <p className="tracking-wide text-center text-xs font-semibold">
-          {getNextPlatform()}
+          { getNextPlatform() }
         </p>
       </button>
     );
@@ -156,26 +156,26 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
 
   return (
     <div
-      className={`
-        ${isFullScreen
+      className={ `
+        ${ isFullScreen
           ? "top-[40%] md:top-[35%]"
           : "top-[48%] md:top-[40%] lg:top-[42%]"
         }
         absolute -translate-y-1/2 grid gap-2
-        ${platform === PLATFORMS.WINDOWS || platform === PLATFORMS.MAC
+        ${ platform === PLATFORMS.WINDOWS || platform === PLATFORMS.MAC
           ? "left-10 grid-cols-2 gap-4"
           : "grid-cols-4 mt-7  sm:mt-5"
         }
       `}
     >
       <ProjectDialog
-        platform={platform}
+        platform={ platform }
         button={
           <button className="flex flex-col items-center justify-center text-white text-sm gap-2">
             <Image
               src="nextjs.svg"
-              width={50}
-              height={50}
+              width={ 50 }
+              height={ 50 }
               alt="Next.js Logo"
               className="bg-gradient-to-t from-slate-100 to-gray-200 p-1 rounded-xl shadow-xl"
             />
@@ -185,15 +185,15 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
       />
 
       <button
-        onClick={handleFullScreenClick}
+        onClick={ handleFullScreenClick }
         className="flex flex-col items-center justify-center text-white text-sm gap-2"
       >
         <span className="bg-gradient-to-t from-slate-100 to-gray-200 p-[10px] rounded-xl shadow-xl">
-          {isFullScreen ? (
-            <Minimize2 size={28} className="text-blue-500 rotate-90" />
+          { isFullScreen ? (
+            <Minimize2 size={ 28 } className="text-blue-500 rotate-90" />
           ) : (
-            <Maximize2 size={28} className="text-blue-500 rotate-90" />
-          )}
+            <Maximize2 size={ 28 } className="text-blue-500 rotate-90" />
+          ) }
         </span>
         <p className="tracking-wide">Fullscreen</p>
       </button>
@@ -203,9 +203,9 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
           <button className="flex flex-col items-center justify-center text-white text-sm gap-2">
             <span className="bg-gradient-to-t from-slate-100 to-gray-200 p-[10px] rounded-xl shadow-xl">
               <Image
-                src={"/code.webp"}
-                width={30}
-                height={30}
+                src={ "/code.webp" }
+                width={ 30 }
+                height={ 30 }
                 alt="Code Logo"
               />
             </span>
@@ -236,14 +236,14 @@ const MenuButtons: FC<menuButtonProps> = ({ platform, togglePlatform }) => {
             <p className="tracking-wide">Blogs</p>
           </button>
         } */}
-      {/* /> */}
+      {/* /> */ }
 
-      {renderButton(getButtonConfig("pdf"))}
-      {renderButton(getButtonConfig("github"))}
-      {renderButton(getButtonConfig("linkedin"))}
-      {renderButton(getButtonConfig("x"))}
-      {renderButton(getButtonConfig("coffee"))}
-      {renderPlatformToggleButton()}
+      { renderButton( getButtonConfig( "pdf" ) ) }
+      { renderButton( getButtonConfig( "github" ) ) }
+      { renderButton( getButtonConfig( "linkedin" ) ) }
+      { renderButton( getButtonConfig( "x" ) ) }
+      { renderButton( getButtonConfig( "coffee" ) ) }
+      { renderPlatformToggleButton() }
     </div>
   );
 };

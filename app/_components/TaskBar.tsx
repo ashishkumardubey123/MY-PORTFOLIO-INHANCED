@@ -41,15 +41,18 @@ const TaskBar: FC<TaskBarProps> = ({ platform }) => {
   }, [platform]);
 
   const renderWeatherInfo = () => (
-    <div className="flex gap-2 text-xs cursor-default">
-      <span className="flex items-center">
-        <Cloud size={16} />
-      </span>
-      <span className="flex flex-col">
-        <span>{weather.slice(0, 2)}°C</span>
-        <span>{weather.slice(4)}</span>
-      </span>
-    </div>
+    <Tooltip text="Weather • Jabalpur, India">
+      <div className="flex gap-2 text-xs cursor-default items-center">
+        <span className="flex items-center">
+          <Cloud size={18} />
+        </span>
+        <span className="flex flex-col leading-tight">
+          <span className="font-medium">{weather ? weather.slice(0, 2) : "--"}°C</span>
+          <span className="text-gray-200">{weather ? weather.slice(4) : ""}</span>
+          <span className="text-[10px] text-gray-400">Jabalpur, India</span>
+        </span>
+      </div>
+    </Tooltip>
   );
 
   const renderTimeAndDate = () => (

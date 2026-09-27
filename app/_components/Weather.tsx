@@ -35,7 +35,7 @@ const Weather: FC<TaskBarProps> = ({ platform }) => {
       >
         {platform === "Mac" && (
           <div className="phone-glass p-3 text-white  rounded-lg w-48 border border-gray-600 shadow-inner">
-            <div className="text-base font-semibold">New Delhi, India</div>
+            <div className="text-base font-semibold">Jabalpur, India</div>
             <div className="text-2xl font-bold">
               {weather ? weather.toString().slice(0, 2) : "Loading..."}°C
             </div>
@@ -66,7 +66,7 @@ const Weather: FC<TaskBarProps> = ({ platform }) => {
           <div className="flex justify-between items-center">
             <div>
               <h2 className="text-base font-semibold flex items-center justify-center gap-2 text-nowrap">
-                New Delhi, India <MapPin size={15} />
+                Jabalpur, India <MapPin size={15} />
               </h2>
               <span className="text-3xl font-semibold flex items-start justify-start">
                 {weather ? weather.toString().slice(0, 2) : "Loading..."}
