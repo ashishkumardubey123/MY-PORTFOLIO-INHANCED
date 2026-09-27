@@ -13,34 +13,34 @@ import { Projects } from "../_Projects/Project";
 import { Client } from "../_Projects/Freelancing";
 import PopLoader from "./PopLoader";
 
-const ProjectDialog = ({
+const ProjectDialog = ( {
   button,
   platform,
 }: {
   button: React.ReactNode;
   platform: string;
-}) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
+} ) => {
+  const [ isLoading, setIsLoading ] = useState( true );
+  const [ isOpen, setIsOpen ] = useState( false );
 
-  useEffect(() => {
+  useEffect( () => {
     let timer: NodeJS.Timeout;
-    if (isOpen) {
-      setIsLoading(true);
-      timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 2000);
+    if ( isOpen ) {
+      setIsLoading( true );
+      timer = setTimeout( () => {
+        setIsLoading( false );
+      }, 2000 );
     }
-    return () => clearTimeout(timer);
-  }, [isOpen]);
+    return () => clearTimeout( timer );
+  }, [ isOpen ] );
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>{button}</DialogTrigger>
+    <Dialog open={ isOpen } onOpenChange={ setIsOpen }>
+      <DialogTrigger asChild>{ button }</DialogTrigger>
       <DialogContent>
-        {isLoading ? (
+        { isLoading ? (
           <div className="w-full h-[500px] flex justify-center items-center">
-            <PopLoader platform={platform} />
+            <PopLoader platform={ platform } />
           </div>
         ) : (
           <>
@@ -57,7 +57,7 @@ const ProjectDialog = ({
               <Tabs defaultValue="client" className="w-full h-full">
                 <TabsList className="w-full flex items-center justify-center bg-[#27272A] gap-2 p-2">
                   <TabsTrigger className="text-white w-full" value="client">
-                    Client Work
+                    Organisation Work
                   </TabsTrigger>
                   <TabsTrigger className="text-white w-full" value="project">
                     Project
@@ -66,23 +66,23 @@ const ProjectDialog = ({
                 <div className="w-full h-[450px] xl:h-[500px] overflow-hidden overflow-y-auto  custom-scrollbar">
                   <TabsContent value="project">
                     <div className="grid grid-cols-1 md:grid-cols-2 p-2 gap-5">
-                      {Projects?.map((project, index) => (
-                        <Card key={index} {...project} />
-                      ))}
+                      { Projects?.map( ( project, index ) => (
+                        <Card key={ index } { ...project } />
+                      ) ) }
                     </div>
                   </TabsContent>
                   <TabsContent value="client">
                     <div className="grid grid-cols-1 md:grid-cols-2 p-2 gap-5">
-                      {Client?.map((project, index) => (
-                        <Card key={index} {...project} />
-                      ))}
+                      { Client?.map( ( project, index ) => (
+                        <Card key={ index } { ...project } />
+                      ) ) }
                     </div>
                   </TabsContent>
                 </div>
               </Tabs>
             </div>
           </>
-        )}
+        ) }
       </DialogContent>
     </Dialog>
   );

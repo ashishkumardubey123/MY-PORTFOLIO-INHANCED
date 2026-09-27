@@ -71,19 +71,16 @@ export default function RootLayout( {
   return (
     <html lang="en">
       <head>
-        <meta
-          name="google-site-verification"
-          content="blJCJi4Eo_K64ONseNhLeGpJ_x0EpMjocaPGtAt2FKk"
-        />
+
         <Script
           async
-          src="https://www.googletagmanager.com/gtag/js?id=G-X0EVT5J1PV"></Script>
+          src="https://www.googletagmanager.com/gtag/js?id=G-3DBHVT2XZS"></Script>
         <Script id="google-analytics">
           { `window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-              gtag('config', 'G-X0EVT5J1PV');`}
+      gtag('config', 'G-3DBHVT2XZS');`}
         </Script>
       </head>
       <body className={ `${ inter.className } font-sans select-none bg-black` }>

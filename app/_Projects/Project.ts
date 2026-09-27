@@ -1,48 +1,43 @@
 export const Projects = [
   {
-    name: "Link Nest",
-    logo: "/project/12th.png",
+    name: "AI-CHET-BOT",
+    logo: "https://ik.imagekit.io/Ashish834/ashish%20portfolio/ai%20chat%20bot%20logo%20.png",
     description: "A collection of all social media links in one place.",
     techStack: [
       "Next.js",
       "React",
-      "GraphQL",
-      "Razorpay",
-      "Apollo Client & Server",
-      "Prisma",
+      "RAG",
       "Tailwind CSS",
       "Shadcn UI",
-      "React Hook Form",
-      "Framer Motion",
-      "NextAuth",
+      "gen AI",
       "bcryptjs",
-      "TypeScript",
+
     ],
     imageSrc:
-      "https://utfs.io/f/cee75717-71f6-4ad5-9d38-4183bb9a7e45-ybllxu.jpg",
-    videoSrc: "https://utfs.io/f/eed672d8-7b63-4aac-9e91-5adf8653bc6e-wead.mp4",
-    demoLink: "https://link-nest.vercel.app",
-    codeLink: "https://github.com/riteshk-007/link-nest",
+      "https://ik.imagekit.io/Ashish834/ashish%20portfolio/ai%20chat%20bot.png",
+
+    demoLink: "https://ai-chet-bot.vercel.app",
+    codeLink: "https://github.com/ashishkumardubey123/AI-CHET-BOT-",
   },
   {
-    name: "Shop Smart",
-    logo: "/project/1st.png",
+    name: "eoan",
+    logo: "https://ik.imagekit.io/Ashish834/ashish%20portfolio/EONE%20LOGO.jpeg",
     description:
-      "A full-featured e-commerce application where users can browse products, add them to a cart, and make purchases.",
+      "Premium furniture store - Modern sofas, tables & home decor collections.",
     techStack: [
       "Next.js",
       "Prisma",
       "Tailwind CSS",
       "React",
       "Redux Toolkit",
-      "TypeScript",
+
       "Redis",
       "Razorpay",
     ],
     imageSrc:
-      "https://utfs.io/f/c3ad20d6-e114-4471-89d2-a9e150939b3a-p1iecd.jpg",
-    videoSrc: "https://utfs.io/f/8515c08d-723b-4420-96c8-e8e8fe91f9de-136a.mp4",
-    demoLink: "https://shop-smart-lilac.vercel.app",
-    codeLink: "https://github.com/riteshk-007/shop-smart",
+      "https://ik.imagekit.io/Ashish834/ashish%20portfolio/EON%20E-COMARCE.png",
+
+    demoLink: "https://eoan.in/",
+
   },
 ];
